@@ -1,5 +1,7 @@
-# Use an official Nginx image as the base image
-FROM nginx:latest
+FROM nginx:1.10.1-alpine
 
-# Copy your index.html file to the default Nginx web server directory
-COPY index.html /usr/share/nginx/html/
+COPY index.html /usr/share/nginx/html
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
